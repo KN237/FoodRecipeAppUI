@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:recipe_app/configs/theme.dart';
+import 'package:recipe_app/screens/auth/login.dart';
+import 'package:recipe_app/screens/auth/register.dart';
 import 'package:recipe_app/screens/splash_screen.dart';
 
 void main() async {
@@ -11,7 +13,7 @@ void main() async {
       debugShowCheckedModeBanner: false,
       title: 'Recipe App',
       theme: customTheme,
-      home: const SplashScreen(),
+      home: const Login(),
     ),
   );
 }

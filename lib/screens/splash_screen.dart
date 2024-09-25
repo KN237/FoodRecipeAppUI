@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_app/configs/constants.dart';
 import 'package:recipe_app/widgets/primary_button.dart';
+import 'package:recipe_app/widgets/spacer.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -45,15 +45,14 @@ class SplashScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
+                //HAT PART
                 Column(
                   children: [
                     Image.asset(
                       'assets/images/hat.png',
                       color: Colors.white.withOpacity(0.9),
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
+                    addVerticalSpace(10),
                     Text(
                       '100K + Premium Recipe',
                       style: TextStyle(
@@ -62,6 +61,7 @@ class SplashScreen extends StatelessWidget {
                     )
                   ],
                 ),
+                //BIG TEXT PART
                 Column(
                   children: [
                     Text(
@@ -74,18 +74,16 @@ class SplashScreen extends StatelessWidget {
                         color: Colors.white.withOpacity(0.9),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+
+                    addVerticalSpace(20),
                     Text(
                       'Simple way to find Tasty Recipe',
                       style: TextStyle(
                         color: Colors.white.withOpacity(0.8),
                       ),
                     ),
-                    const SizedBox(
-                      height: 50,
-                    ),
+                    addVerticalSpace(50),
+                    //PRIMARY BUTTON
                     PrimaryButton(
                       title: 'Start Something',
                       onTap: () {},
