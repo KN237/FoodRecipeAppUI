@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 final customTheme = ThemeData.light().copyWith(
   textTheme: GoogleFonts.poppinsTextTheme(),
+  scaffoldBackgroundColor: Colors.white,
 );
 
 final titleLargeBold = customTheme.textTheme.titleLarge!

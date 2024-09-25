@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:recipe_app/configs/theme.dart';
-import 'package:recipe_app/screens/auth/login.dart';
-import 'package:recipe_app/screens/auth/register.dart';
-import 'package:recipe_app/screens/splash_screen.dart';
+import 'package:recipe_app/screens/main/home_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +11,7 @@ void main() async {
       debugShowCheckedModeBanner: false,
       title: 'Recipe App',
       theme: customTheme,
-      home: const Login(),
+      home: const HomePage(),
     ),
   );
 }
