@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_app/screens/auth/register.dart';
 import 'package:recipe_app/widgets/primary_button.dart';
 import 'package:recipe_app/widgets/spacer.dart';
 
@@ -86,7 +87,12 @@ class SplashScreen extends StatelessWidget {
                     //PRIMARY BUTTON
                     PrimaryButton(
                       title: 'Start Something',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => const Register()),
+                        );
+                      },
                     )
                   ],
                 ),

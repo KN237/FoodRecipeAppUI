@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/configs/constants.dart';
 import 'package:recipe_app/configs/theme.dart';
+import 'package:recipe_app/screens/main/home_page.dart';
 import 'package:recipe_app/widgets/decorated_title.dart';
 import 'package:recipe_app/widgets/icon_button.dart';
 import 'package:recipe_app/widgets/primary_button.dart';
@@ -23,7 +24,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.fromLTRB(
-            20, MediaQuery.of(context).viewPadding.top, 20, 20),
+            20, MediaQuery.of(context).viewPadding.top + 20, 20, 20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,7 +60,13 @@ class _LoginState extends State<Login> {
               ),
               PrimaryButton(
                 title: 'Sign In',
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const HomePage(),
+                    ),
+                  );
+                },
                 width: MediaQuery.of(context).size.width,
               ),
               addVerticalSpace(20),
