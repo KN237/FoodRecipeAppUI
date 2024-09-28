@@ -32,7 +32,9 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^6.2.1
+  grouped_list: ^6.0.0
   icon_icons: ^1.0.4
+  intl: ^0.19.0
   ionicons: ^0.2.2
 
 dev_dependencies:

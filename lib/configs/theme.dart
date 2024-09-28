@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:recipe_app/configs/constants.dart';
 
 final customTheme = ThemeData.light().copyWith(
   textTheme: GoogleFonts.poppinsTextTheme(),
   scaffoldBackgroundColor: Colors.white,
   appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
+  tabBarTheme: const TabBarTheme(
+    indicatorColor: Colors.transparent,
+    labelStyle: TextStyle(color: Colors.white),
+    unselectedLabelStyle: TextStyle(color: Constants.primaryColor),
+    dividerHeight: 0,
+    tabAlignment: TabAlignment.start,
+  ),
 );
 
 final titleLargeBold = customTheme.textTheme.titleLarge!

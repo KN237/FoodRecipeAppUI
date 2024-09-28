@@ -3,6 +3,7 @@ import 'package:recipe_app/configs/constants.dart';
 import 'package:recipe_app/configs/theme.dart';
 import 'package:recipe_app/screens/main/bookmark_page.dart';
 import 'package:recipe_app/screens/main/home_implicit.dart';
+import 'package:recipe_app/screens/main/notification_page.dart';
 import 'package:recipe_app/screens/main/search_page.dart';
 import 'package:recipe_app/widgets/bottom_navigation_bar.dart';
 
@@ -17,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> screens = const [
     HomeImplicit(),
     BookmarkPage(),
-    HomeImplicit(),
+    NotificationPage(),
     BookmarkPage()
   ];
   int currentIndex = 0;
@@ -34,13 +35,23 @@ class _HomePageState extends State<HomePage> {
       extendBody: true,
       appBar: currentIndex == 1
           ? AppBar(
+              automaticallyImplyLeading: false,
               centerTitle: true,
               title: Text(
                 'Search recipes',
                 style: titleSmallBold,
               ),
             )
-          : null,
+          : currentIndex == 2
+              ? AppBar(
+                  automaticallyImplyLeading: false,
+                  centerTitle: true,
+                  title: Text(
+                    'Notifications',
+                    style: titleSmallBold,
+                  ),
+                )
+              : null,
       body: screens[currentIndex],
       bottomNavigationBar: CustomBottomNavigationBar(
         onPageChange: (index) {

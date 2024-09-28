@@ -4,8 +4,8 @@ import 'package:recipe_app/widgets/card_view.dart';
 import 'package:recipe_app/widgets/main_header.dart';
 import 'package:recipe_app/widgets/search_widget.dart';
 import 'package:recipe_app/widgets/spacer.dart';
-import 'package:recipe_app/widgets/tab_bar.dart';
-import 'package:recipe_app/widgets/tab_view.dart';
+import 'package:recipe_app/widgets/home_tab_bar.dart';
+import 'package:recipe_app/widgets/home_tab_view.dart';
 
 class HomeImplicit extends StatefulWidget {
   const HomeImplicit({super.key});

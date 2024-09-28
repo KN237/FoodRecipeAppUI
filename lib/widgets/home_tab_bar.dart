@@ -18,10 +18,6 @@ class _CustomTabBarState extends State<CustomTabBar> {
         controller: widget.tabController,
         padding: EdgeInsets.zero,
         isScrollable: true,
-        indicatorColor: Colors.transparent,
-        labelStyle: const TextStyle(color: Colors.white),
-        unselectedLabelStyle: TextStyle(color: Constants.primaryColor),
-        dividerHeight: 0,
         tabAlignment: TabAlignment.start,
         onTap: (value) {
           setState(() {});
