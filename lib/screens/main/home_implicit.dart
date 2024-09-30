@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_app/configs/theme.dart';
+import 'package:recipe_app/screens/main/search_page.dart';
 import 'package:recipe_app/widgets/card_view.dart';
 import 'package:recipe_app/widgets/main_header.dart';
 import 'package:recipe_app/widgets/search_widget.dart';
@@ -42,7 +43,16 @@ class _HomeImplicitState extends State<HomeImplicit>
           children: [
             const MainHeader(),
             addVerticalSpace(30),
-            SearchWidget(textController: textController),
+            SearchWidget(
+              textController: textController,
+              onFilter: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const SearchPage(),
+                  ),
+                );
+              },
+            ),
             addVerticalSpace(30),
             CustomTabBar(tabController: tabController),
             addVerticalSpace(20),

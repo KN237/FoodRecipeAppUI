@@ -37,7 +37,9 @@ class _NotificationPageState extends State<NotificationPage>
         children: [
           NotificationTabBar(tabController: tabController),
           addVerticalSpace(10),
-          Expanded(child: NotificationsTabView(tabController: tabController)),
+          Expanded(
+            child: NotificationsTabView(tabController: tabController),
+          ),
         ],
       ),
     );

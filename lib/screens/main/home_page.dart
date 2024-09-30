@@ -4,6 +4,7 @@ import 'package:recipe_app/configs/theme.dart';
 import 'package:recipe_app/screens/main/bookmark_page.dart';
 import 'package:recipe_app/screens/main/home_implicit.dart';
 import 'package:recipe_app/screens/main/notification_page.dart';
+import 'package:recipe_app/screens/main/profile.dart';
 import 'package:recipe_app/screens/main/search_page.dart';
 import 'package:recipe_app/widgets/bottom_navigation_bar.dart';
 
@@ -19,7 +20,7 @@ class _HomePageState extends State<HomePage> {
     HomeImplicit(),
     BookmarkPage(),
     NotificationPage(),
-    BookmarkPage()
+    Profile(),
   ];
   int currentIndex = 0;
 
@@ -29,29 +30,51 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  AppBar? displayAppBar() {
+    return currentIndex == 1
+        ? AppBar(
+            automaticallyImplyLeading: false,
+            centerTitle: true,
+            title: Text(
+              'Search recipes',
+              style: titleSmallBold,
+            ),
+          )
+        : currentIndex == 2
+            ? AppBar(
+                automaticallyImplyLeading: false,
+                centerTitle: true,
+                title: Text(
+                  'Notifications',
+                  style: titleSmallBold,
+                ),
+              )
+            : currentIndex == 3
+                ? AppBar(
+                    automaticallyImplyLeading: false,
+                    centerTitle: true,
+                    title: Text(
+                      'Profile',
+                      style: titleSmallBold,
+                    ),
+                    actions: [
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.more_horiz),
+                        ),
+                      ),
+                    ],
+                  )
+                : null;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      appBar: currentIndex == 1
-          ? AppBar(
-              automaticallyImplyLeading: false,
-              centerTitle: true,
-              title: Text(
-                'Search recipes',
-                style: titleSmallBold,
-              ),
-            )
-          : currentIndex == 2
-              ? AppBar(
-                  automaticallyImplyLeading: false,
-                  centerTitle: true,
-                  title: Text(
-                    'Notifications',
-                    style: titleSmallBold,
-                  ),
-                )
-              : null,
+      appBar: displayAppBar(),
       body: screens[currentIndex],
       bottomNavigationBar: CustomBottomNavigationBar(
         onPageChange: (index) {
@@ -59,13 +82,7 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (context) => const SearchPage(),
-            ),
-          );
-        },
+        onPressed: () {},
         backgroundColor: Constants.primaryColor,
         shape: const CircleBorder(),
         child: const Icon(
